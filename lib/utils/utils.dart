@@ -77,6 +77,29 @@ SizedBox height(double h) {
   );
 }
 
+///
+/// SortFrom fo
+/// ```dart
+/// FocusScope.of(context).unfocus()
+/// ```
+void unFocus(BuildContext context) {
+  FocusScope.of(context).unfocus();
+}
+
+extension MQ on BuildContext {
+  /// Extension method for
+  /// ```dart
+  /// MediaQuery.of(this).size
+  /// ```
+  Size get screenSize => MediaQuery.of(this).size;
+
+  /// Extension method for
+  /// ```dart
+  /// Theme.of(this)
+  /// ```
+  ThemeData get theme => Theme.of(this);
+}
+
 /// Loading Indicator
 /// Before using this method you need to pass [EasyLoading.init()] in the material app
 /// ```dart
