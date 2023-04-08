@@ -19,3 +19,13 @@ This package is use as utils method in flutter app.
  - Short methods of SizedBox (height,width)
  - Loading Indicator with packages (flutter_easyloading)
  - print formatted json
+
+## Changelog 0.0.2
+ - Added extension method of Media Query
+## Changelog 0.0.3
+ - Minor Code Changes
+## Changelog 0.0.4
+ - Minor Changes in Loading indicator method
+ ## Changelog 0.0.5
+ - Added proper documentation for the helper methods and functions
+ - convert height and width methods to stateless widget
