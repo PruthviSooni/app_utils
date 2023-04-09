@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
@@ -48,9 +49,16 @@ Future<T?> push<T>({
 }) {
   if (pushUntil) {
     return Navigator.of(context).pushAndRemoveUntil<T?>(
-        CupertinoPageRoute(builder: (_) => screen), (Route<dynamic> route) => false);
+        Platform.isAndroid
+            ? MaterialPageRoute(builder: (_) => screen)
+            : CupertinoPageRoute(builder: (_) => screen),
+        (Route<dynamic> route) => false);
   }
-  return Navigator.of(context).push<T>(CupertinoPageRoute(builder: (_) => screen));
+  return Navigator.of(context).push<T>(
+    Platform.isAndroid
+        ? MaterialPageRoute(builder: (_) => screen)
+        : CupertinoPageRoute(builder: (_) => screen),
+  );
 }
 
 /// A Dart function that pops the current route off the navigation stack and returns an optional result.
@@ -152,7 +160,7 @@ class Width extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: width,
+      width: width,
     );
   }
 }
