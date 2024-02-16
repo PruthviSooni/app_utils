@@ -226,10 +226,10 @@ extension MQ on BuildContext {
 /// ```
 void loading({
   required bool value,
-  String? title,
+  String? title = "Loading..",
   bool closeOverlays = false,
 }) {
-  final primaryColor = Theme.of(globalContext!).colorScheme.primary;
+  final primaryColor = Theme.of(globalContext!).primaryColor;
   if (value) {
     EasyLoading.instance
       ..indicatorType = EasyLoadingIndicatorType.ring
@@ -247,7 +247,7 @@ void loading({
       ..animationStyle = EasyLoadingAnimationStyle.offset;
     EasyLoading.show(
       maskType: EasyLoadingMaskType.custom,
-      status: title ?? "Loading..",
+      status: title,
       dismissOnTap: kDebugMode,
     );
   } else {

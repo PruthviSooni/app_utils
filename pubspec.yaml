@@ -1,10 +1,10 @@
 name: utils_package
 description: A flutter package for utils.
-version: 0.0.6
+version: 0.0.9
 homepage: https://github.com/PruthviSooni/app_utils.git
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.16.2 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
